@@ -107,4 +107,29 @@ let lessons = [
       "availableInventory": 5,
     }
 ]
- 
+function checkform()
+{
+    var f = document.forms["theform"].elements;
+    var cansubmit = true;
+
+    for (var i = 0; i < f.length; i++) {
+        if (f[i].value.length == 0) cansubmit = false;
+    }
+
+    if (cansubmit) {
+        document.getElementById('submitbutton').style.visibility = 'visible';
+    }
+}
+function Validate(e) {
+  var keyCode = e.keyCode || e.which;
+
+  var lblError = document.getElementById("lblError");
+  lblError.innerHTML = "";
+
+  var regex = /^[A-Za-z]+$/;
+  var isValid = regex.test(String.fromCharCode(keyCode));
+  if (!isValid) {
+      lblError.innerHTML = "";
+  }
+  return isValid;
+}
