@@ -139,6 +139,9 @@
                     document.getElementById("sortButtons").style.display='none';
                     document.getElementById("chkout").style.display='contents';     
                 },
+                 submitForm() {
+                    alert('Order submitted!')
+                },
 
                 canAddToCart(lessons) {
                     return lessons.availableInventory > this.cartCount(lessons);
