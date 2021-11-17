@@ -59,7 +59,21 @@
                 </div> 
             </div>
             
-            <div v-else>                    
+            <div v-else>          
+                    <div>
+                            <h2 style="margin-left: 30px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size:30px;color:rgb(0, 0, 0);">Your Cart</h2>
+                            <div class="card" v-for="lessons in cart">
+                                   
+                             <h2 style="margin-left: 30px;font-family: Brush script MT;font-size:30px;color:rgb(0, 0, 0);" v-text="lessons.subject"></h2>
+                             <figure>
+                                 <img  style="width: 300px;height:300px;margin-left:-20px;" v-bind:src="lessons.image">
+                             </figure>
+                             <p style="margin-left: 30px;color:rgb(0, 0, 0);;">Location: {{lessons.location}}</p>
+                             <p style="margin-left: 30px;color:rgb(0, 0, 0);;">Price: {{lessons.price}}</p>
+                             <button style="margin-left:160px;margin-bottom:20px;height:50px;width:120px;background-color:rgb(209, 22, 22);color:rgb(255, 196, 0);border:4px solid rgb(255, 196, 0);border-radius:30px;"  v-on:click='RemoveItem(lessons)' >Remove</button>
+                        
+                            </div>      
+                    </div>    
                 <div   v-if='showlesson'>
                     <div v-for="lessons in Sort">
                         <h2 id="lessonSubject" v-text="lessons.subject"></h2>
